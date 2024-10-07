@@ -1,0 +1,16 @@
+---
+interface Props {
+  linkTo: string;
+  isBlank: boolean;
+}
+const { linkTo = './', isBlank } = Astro.props;
+---
+
+<a
+  class="flex justify-center items-center bg-transparent border border-black py-1.5 px-2 font-bold cursor-pointer transition-colors hover:text-ideathon-red"
+  href={linkTo}
+  target={isBlank ? '_blank' : '_self'}
+  rel={isBlank ? 'noopener noreferrer' : ''}
+>
+  <slot name="content" />
+</a>

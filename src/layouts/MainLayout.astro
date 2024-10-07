@@ -1,0 +1,43 @@
+---
+import Footer from '../components/Footer.astro';
+
+const { title } = Astro.props;
+---
+
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Ideathon je intenzivní 24hodinový workshop, který dává studentum príležitost v krátkém case vyrešit naléhavévýzvy naší doby. Úcastníci workshopu pracují v týmech a díky vzájemné spolupráci navrhují pomocí design thinkingových metod a inovativních postupu rešení zadaných výzev."
+    />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ideathon UTB" />
+    <meta
+      property="og:description"
+      content="Ideathon je intenzivní 24hodinový workshop, který dává studentum príležitost v krátkém case vyrešit naléhavévýzvy naší doby. Úcastníci workshopu pracují v týmech a díky vzájemné spolupráci navrhují pomocí design thinkingových metod a inovativních postupu rešení zadaných výzev."
+    />
+    <meta property="og:url" content="https://ideathonutb.cz/" />
+    <meta property="og:image" content="https://ideathonutb.cz/og-image.jpg" />
+    <meta property="og:site_name" content="Ideathon UTB" />
+    <meta name="generator" content={Astro.generator} />
+    {
+      title ? (
+        <title>Ideathon UTB - {title}</title>
+      ) : (
+        <title>Ideathon UTB</title>
+      )
+    }
+  </head>
+  <body class="w-full flex flex-col items-center">
+    <main class="w-full max-w-[1600px] px-4 md:px-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

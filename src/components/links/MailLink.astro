@@ -1,0 +1,11 @@
+---
+interface Props {
+  mailTo: string;
+}
+
+const { mailTo } = Astro.props;
+---
+
+<a href={'mailto:' + mailTo} class="underline text-inherit cursor-pointer"
+  >{mailTo}</a
+>

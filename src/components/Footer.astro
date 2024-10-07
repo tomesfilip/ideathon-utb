@@ -1,0 +1,59 @@
+---
+import czechInvestImg from '../assets/footer/czechinvest.svg';
+import ticImg from '../assets/footer/tic.svg';
+import upperImg from '../assets/footer/upper.svg';
+import utbImg from '../assets/footer/utb.svg';
+import zlkImg from '../assets/footer/zk-logo-white.svg';
+
+import MailLink from './links/MailLink.astro';
+import Link from './links/Link.astro';
+import { Image } from 'astro:assets';
+
+const logos = [
+  {
+    logo: upperImg,
+    link: 'https://upper.utb.cz/',
+    alt: 'upper',
+  },
+  {
+    logo: utbImg,
+    link: 'https://www.utb.cz/',
+    alt: 'utb',
+  },
+  {
+    logo: ticImg,
+    link: 'https://www.ticzlin.cz/',
+    alt: 'tic',
+  },
+  {
+    logo: czechInvestImg,
+    link: 'https://www.czechinvest.org/cz/',
+    alt: 'czech invest',
+  },
+  {
+    logo: zlkImg,
+    link: 'https://www.krajbezhranic.cz/',
+    alt: 'Zlínský kraj',
+  },
+];
+---
+
+<footer>
+  <div class="sponsors">
+    {
+      logos.map((logo) => (
+        <Link linkTo={logo.link} isBlank={true}>
+          <Image slot="content" src={logo.logo} alt={logo.alt} />
+        </Link>
+      ))
+    }
+    <div class="tech-support-links">
+      <Link linkTo="/deklarace">Prohlášení o přístupnosti</Link>
+      <Link linkTo="/cookies">Informace o cookies</Link>
+      <div>
+        Za obsah a technickou správu webu odpovídá MgA. Jitka Honsová
+        <MailLink mailTo="upper@utb.cz" />
+      </div>
+    </div>
+  </div>
+</footer>

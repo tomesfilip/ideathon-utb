@@ -1,0 +1,16 @@
+---
+interface Props {
+  linkTo: string;
+  isBlank?: boolean;
+}
+const { linkTo = './', isBlank } = Astro.props;
+---
+
+<a
+  class="cursor-pointer"
+  href={linkTo}
+  target={isBlank ? '_blank' : '_self'}
+  rel={isBlank ? 'noopener noreferrer' : ''}
+>
+  <slot name="content" />
+</a>

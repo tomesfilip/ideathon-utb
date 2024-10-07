@@ -1,0 +1,53 @@
+---
+import MailLink from '../components/links/MailLink.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Deklarace">
+  <h1 class="uppercase mb-8">PROHLÁŠENÍ O PŘÍSTUPNOSTI</h1>
+  <div class="space-y-4">
+    <p>
+      Univerzita Tomáše Bati ve Zlíně se zavazuje k zpřístupnění svých webových
+      stránek a mobilních aplikací v souladu se zákonem č. 99/2019 Sb., o
+      přístupnosti webových stránek a mobilních aplikací a o změně zákona č.
+      365/2000 Sb., o informačních systémech veřejné správy a o změně některých
+      dalších zákonů, ve znění pozdějších předpisů.
+    </p>
+    <p>
+      Toto prohlášení o přístupnosti se vztahuje na obsah internetových stránek
+      upper.utb.cz.
+    </p>
+  </div>
+  <div class="space-y-4">
+    <p class="text-bold">Stav souladu</p>
+    <p>
+      Webové stránky ideathonutb.cz jsou plně v souladu požadavky stanovenými
+      zákonem č. 99/2019 Sb. a mezinárodním standardem přístupnosti WCAG 2.1.
+      Webové stránky jsou aktualizovány a dále vyvíjeny za dodržování postupů a
+      zásad přístupnosti tak, aby se s jejich obsahem mohli seznámit i uživatelé
+      se specifickými potřebami.
+    </p>
+  </div>
+  <div class="space-y-4">
+    <p class="text-bold">Vypracování tohoto prohlášení o přístupnosti</p>
+    <p>
+      Prohlášení bylo vypracováno dne 8. 10. 2020 na základě vlastního
+      posouzení.
+    </p>
+  </div>
+  <div class="space-y-4">
+    <p class="text-bold">Zpětná vazba a kontaktní údaje</p>
+    <div>
+      Návštěvníkům webu je k dispozici uživatelská podpora, kterou mohou
+      kontaktovat prostřednictvím e-mailu
+      <MailLink mailTo="upper@utb.cz" /> v případě dotazů či problémů spojených s
+      přístupností webu.
+    </div>
+  </div>
+  <div class="space-y-4">
+    <p class="text-bold">Postupy pro prosazování práva</p>
+    V případě neuspokojivé odpovědi na oznámení nebo žádost zaslanou uživatelské
+    podpoře, má návštěvník možnost obrátit se na kancléře UTB ve Zlíně prostřednictvím
+    e-mailu <MailLink mailTo="kancler@utb.cz" />.
+  </div>
+</MainLayout>
