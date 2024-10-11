@@ -12,3 +12,9 @@ export type CardType = {
   textTwo?: string;
   textExtra?: string;
 };
+
+export type PartnerCardType = {
+  logo: string;
+  logoAlt: string;
+  text: string;
+};

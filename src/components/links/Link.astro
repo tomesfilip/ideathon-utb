@@ -7,7 +7,7 @@ const { linkTo = './', isBlank } = Astro.props;
 ---
 
 <a
-  class="cursor-pointer"
+  class="cursor-pointer text-white underline text-sm"
   href={linkTo}
   target={isBlank ? '_blank' : '_self'}
   rel={isBlank ? 'noopener noreferrer' : ''}
