@@ -4,8 +4,13 @@ interface Props {
   text: string;
 }
 const { link, text } = Astro.props;
+
+const isActive = Astro.url.pathname.includes(link);
 ---
 
 <li>
-  <a class="uppercase font-medium" href={link}>{text}</a>
+  <a
+    class={`uppercase font-medium px-3 py-1.5 outline hover:outline-1 focus:outline-1 transition-colors duration-200 outline-black hover:text-ideathon-red ${isActive ? 'text-ideathon-red outline-1' : 'text-black outline-0'}`}
+    href={link}>{text}</a
+  >
 </li>

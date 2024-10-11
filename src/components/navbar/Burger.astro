@@ -51,7 +51,7 @@
 
   hamburgerBtn?.addEventListener('click', handleToggleMenu);
 
-  media.addEventListener('change', (e) => {
+  media.addEventListener('change', () => {
     if (
       !media.matches &&
       (menuOpen?.classList.contains('isNavOpen') ||

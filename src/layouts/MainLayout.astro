@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 const { title } = Astro.props;
 ---
 
-<html lang="cs" class="h-full">
+<html lang="cs" class="h-full overflow-x-hidden">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -38,7 +38,7 @@ const { title } = Astro.props;
   <body
     class="w-full flex flex-col items-center min-h-screen overflow-x-hidden"
   >
-    <Header client:load />
+    <Header />
     <main class="w-full max-w-[1600px] px-4 md:px-8">
       <slot />
     </main>
