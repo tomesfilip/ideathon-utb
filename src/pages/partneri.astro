@@ -1,0 +1,44 @@
+---
+import '../styles/views/Partners.scss';
+
+import PartnerCard from '../components/cards/PartnerCard.svelte';
+
+import CzechInvestImg from '../assets/partners/czechinvest.svg';
+import TicImg from '../assets/partners/tic.svg';
+import UpperImg from '../assets/partners/upper.svg';
+import UtbImg from '../assets/partners/utb.svg';
+import MainLayout from '../layouts/MainLayout.astro';
+
+const cardContents = [
+  {
+    partnerLogoSrc: UpperImg,
+    partnerLogoAlt: 'UPPER',
+    partnerText:
+      'UPPER je komunitní prostor, který podporuje kreativce na Zlínsku. Prostor pro studenty a absolventy z UTB ve Zlíně pro nastartování vlastního podnikání. Poskytujeme konzultace v oblasti kreativních průmyslů (design, audiovize, animace, marketingová komunikace). Díky naší poloze v TIC Zlín dokážeme propojit mnohé kreativní nápady s ostatními.',
+  },
+  {
+    partnerLogoSrc: UtbImg,
+    partnerLogoAlt: 'Univerzita Tomáše Bati ve Zlíně',
+    partnerText:
+      'Univerzita Tomáše Bati je otevřenou a flexibilní vysokou školou, kterou rozvíjíme na základě pětice ústředních hodnot: podnikavosti, otevřenosti, užitečnosti, tvořivosti a odpovědnosti. Budujeme univerzitu s pevným renomé ve vzdělávacím systému vysokoškolského vzdělávání, zajišťujeme kvalitní výzkum, rozvíjíme přirozené mezinárodní prostředí, a to při zachování sociální odpovědnosti uvnitř i navenek. UTB nejen, že sama podniká, ale podporuje vznik start-up firem svých studentů i absolventů.',
+  },
+  {
+    partnerLogoSrc: TicImg,
+    partnerLogoAlt: 'TIC',
+    partnerText:
+      'Progresivní proklientská agentura tvořící a implementující Regionální inovační strategii Zlínského kraje a promující kvalitu života ve Zlínském kraji s akcentem na studium, podnikání a profesní růst.',
+  },
+  {
+    partnerLogoSrc: CzechInvestImg,
+    partnerLogoAlt: 'CzechInvest',
+    partnerText:
+      'Agentura CzechInvest naplňuje klíčovou úlohu v oblasti podpory podnikání a investic. Unikátní spojení regionálního, centrálního a mezinárodního působení zajišťuje integritu služeb a schopnost propojovat globální trendy s regionálními podmínkami v České republice.',
+  },
+];
+---
+
+<MainLayout>
+  <div class="partners-main">
+    {cardContents.map((card) => <PartnerCard {...card} />)}
+  </div>
+</MainLayout>

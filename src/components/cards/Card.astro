@@ -1,0 +1,38 @@
+---
+interface Props {
+  selectedTopic?: boolean;
+  primaryHeading?: string;
+  heading?: string;
+  headingTwo?: string;
+  text?: string;
+  textTwo?: string;
+  textExtra?: string;
+}
+const {
+  selectedTopic = true,
+  primaryHeading,
+  heading,
+  headingTwo,
+  text,
+  textTwo,
+  textExtra,
+} = Astro.props;
+---
+
+<div
+  class={`bg-ideathon-grey py-7 px-8 max-w-[460px] text-center flex flex-col items-center rounded-[50px] shadow-md ${selectedTopic ? 'opacity-100' : 'opacity-30 select-none'}`}
+>
+  {primaryHeading && <h3 class="font-bold italic mb-5">{primaryHeading}</h3>}
+  {
+    heading && (
+      <h3 class="font-bold italic mb-3 text-ideathon-purple">{heading}</h3>
+    )
+  }
+  {text && <div class="mb-6">{text}</div>}
+  <slot name="card-text-formatted" />
+  {textExtra && <div class="mb-6">{textExtra}</div>}
+
+  {headingTwo && <h3 class="font-bold italic mb-5">{headingTwo}</h3>}
+  {textTwo && <div>{textTwo}</div>}
+  <slot name="card-custom-button" />
+</div>

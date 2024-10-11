@@ -1,0 +1,21 @@
+---
+import { NAV_LINKS } from '../lib/constants';
+import Burger from './navbar/Burger.astro';
+import NavLink from './navbar/NavLink.astro';
+import Socials from './Socials.astro';
+
+let toggledMenu = false;
+---
+
+<header>
+  <nav class="navbar">
+    <Burger />
+    <a href="./" class="menu-link-img">
+      <img src="" alt="" width="" height="" />
+    </a>
+    <ul class="flex items-center space-between">
+      {NAV_LINKS.map((navLink) => <NavLink {...navLink} />)}
+    </ul>
+    <Socials />
+  </nav>
+</header>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  owner: string;
+  heading: string;
+  text: string;
+}
+const { owner, heading, text } = Astro.props;
+---
+
+<div class="bg-ideathon-grey p-4">
+  <h3 class="font-bold uppercase text-[#00e34a]">{owner}</h3>
+  <h3 class="font-bold uppercase italic mb-6">{heading}</h3>
+  <span>{text}</span>
+</div>

@@ -1,0 +1,38 @@
+---
+import '../styles/components/Socials.scss';
+
+import fbIcon from '../assets/header/fbIcon.svg';
+import igIcon from '../assets/header/igIcon.svg';
+import Link from './links/Link.astro';
+
+const socialItems = [
+  {
+    link: 'https://www.facebook.com/events/1752932138427592',
+    img: fbIcon.src,
+    imgAlt: 'facebook ikona',
+  },
+  {
+    link: 'https://www.instagram.com/upper_zlin/',
+    img: igIcon.src,
+    imgAlt: 'instagram ikona',
+  },
+];
+---
+
+<ul class="flex items-center justify-between">
+  {
+    socialItems.map((social) => (
+      <li class="size-5">
+        <Link linkTo={social.link} isBlank>
+          <img
+            slot="content"
+            width={20}
+            height={20}
+            src={social.img}
+            alt={social.imgAlt}
+          />
+        </Link>
+      </li>
+    ))
+  }
+</ul>

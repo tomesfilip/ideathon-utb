@@ -38,8 +38,8 @@ const logos = [
 ];
 ---
 
-<footer>
-  <div class="sponsors">
+<footer class="w-full bg-black bottom-0 flex items-center flex-col">
+  <div class="w-full max-w-[1600px] flex flex-wrap gap-8">
     {
       logos.map((logo) => (
         <Link linkTo={logo.link} isBlank={true}>
@@ -47,7 +47,7 @@ const logos = [
         </Link>
       ))
     }
-    <div class="tech-support-links">
+    <div class="flex flex-col text-sm text-center text-white pb-8">
       <Link linkTo="/deklarace">Prohlášení o přístupnosti</Link>
       <Link linkTo="/cookies">Informace o cookies</Link>
       <div>
