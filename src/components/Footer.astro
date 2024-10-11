@@ -8,6 +8,7 @@ import zlkImg from '../assets/footer/zk-logo-white.svg';
 import MailLink from './links/MailLink.astro';
 import Link from './links/Link.astro';
 import { Image } from 'astro:assets';
+import LocationFooter from './LocationFooter.astro';
 
 const logos = [
   {
@@ -38,22 +39,27 @@ const logos = [
 ];
 ---
 
-<footer class="w-full bg-black bottom-0 flex items-center flex-col">
-  <div class="w-full max-w-[1600px] flex flex-wrap gap-8">
+<footer
+  class="w-full bg-black bottom-0 flex items-center flex-col mt-auto gap-y-8 pb-8"
+>
+  <LocationFooter />
+  <div
+    class="w-full max-w-[1600px] flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-10 md:gap-20 px-4 justify-center items-center"
+  >
     {
       logos.map((logo) => (
         <Link linkTo={logo.link} isBlank={true}>
-          <Image slot="content" src={logo.logo} alt={logo.alt} />
+          <Image src={logo.logo} alt={logo.alt} />
         </Link>
       ))
     }
-    <div class="flex flex-col text-sm text-center text-white pb-8">
-      <Link linkTo="/deklarace">Prohlášení o přístupnosti</Link>
-      <Link linkTo="/cookies">Informace o cookies</Link>
-      <div>
-        Za obsah a technickou správu webu odpovídá MgA. Jitka Honsová
-        <MailLink mailTo="upper@utb.cz" />
-      </div>
+  </div>
+  <div class="flex flex-col text-xs text-center text-white w-full gap-y-2">
+    <Link linkTo="/deklarace">Prohlášení o přístupnosti</Link>
+    <Link linkTo="/cookies">Informace o cookies</Link>
+    <div>
+      Za obsah a technickou správu webu odpovídá MgA. Jitka Honsová
+      <MailLink mailTo="upper@utb.cz" />
     </div>
   </div>
 </footer>

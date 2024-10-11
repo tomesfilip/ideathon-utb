@@ -7,10 +7,10 @@ const { linkTo = './', isBlank } = Astro.props;
 ---
 
 <a
-  class="cursor-pointer text-white underline text-sm"
+  class="cursor-pointer text-white underline text-sm block"
   href={linkTo}
   target={isBlank ? '_blank' : '_self'}
   rel={isBlank ? 'noopener noreferrer' : ''}
 >
-  <slot name="content" />
+  <slot />
 </a>

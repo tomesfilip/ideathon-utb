@@ -1,6 +1,4 @@
 ---
-import '../styles/components/Socials.scss';
-
 import fbIcon from '../assets/header/fbIcon.svg';
 import igIcon from '../assets/header/igIcon.svg';
 import Link from './links/Link.astro';
@@ -24,13 +22,7 @@ const socialItems = [
     socialItems.map((social) => (
       <li class="size-5">
         <Link linkTo={social.link} isBlank>
-          <img
-            slot="content"
-            width={20}
-            height={20}
-            src={social.img}
-            alt={social.imgAlt}
-          />
+          <img width={20} height={20} src={social.img} alt={social.imgAlt} />
         </Link>
       </li>
     ))

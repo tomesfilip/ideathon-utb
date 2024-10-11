@@ -1,0 +1,26 @@
+---
+import LocationIcon from './icons/LocationIcon.astro';
+import Link from './links/Link.astro';
+---
+
+<div
+  class="w-full bg-ideathon-grey text-sm flex flex-col items-center py-10 md:py-12 px-4"
+>
+  <div
+    class="max-w-[800px] w-full flex justify-around gap-8 flex-wrap items-center"
+  >
+    <div class="flex flex-wrap items-center justify-between gap-x-4">
+      <LocationIcon width="2.5em" height="2.5em" />
+      <div>
+        <p>Fakulta multimediálních komunikací</p>
+        <p>Univerzita Tomáše Bati ve Zlíne</p>
+      </div>
+    </div>
+    <div>
+      <Link linkTo="https://fmk.utb.cz" isBlank>
+        <span class="text-black underline">www.fmk.utb.cz</span>
+      </Link>
+      <p>Univerzitní 2431, 760 01 Zlín</p>
+    </div>
+  </div>
+</div>

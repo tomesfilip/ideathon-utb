@@ -7,13 +7,12 @@ import Socials from './Socials.astro';
 let toggledMenu = false;
 ---
 
-<header>
-  <nav class="navbar">
-    <Burger />
+<header class="w-full flex flex-col items-center">
+  <nav class="w-full max-w-[1600px] px-4">
     <a href="./" class="menu-link-img">
       <img src="" alt="" width="" height="" />
     </a>
-    <ul class="flex items-center space-between">
+    <ul class="flex items-center space-between w-full gap-x-8">
       {NAV_LINKS.map((navLink) => <NavLink {...navLink} />)}
     </ul>
     <Socials />
