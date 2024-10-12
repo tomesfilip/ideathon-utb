@@ -1,18 +1,27 @@
 ---
+import Image from 'astro/components/Image.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+
+import imInHeadingImg from '../assets/headings/jdes-do-toho.png';
 ---
 
 <MainLayout title="Jdu do toho">
-  <div class="desc">
-    <p>
-      Jako student naší Univerzity Tomáše Bati ve Zlíně<br />se jednoduše
-      přihlaš do výzvy pomocí zprávy na email:
-    </p>
-    <a
-      class="block text-ideathon-red text-2xl italic font-semibold"
-      href="mailto:ideathon@utb.cz">ideathon@utb.cz</a
-    >
-    <p>(stačí zde napsat své jméno a fakultu)<br /><br /></p>
-    <p>Děkujeme!</p>
+  <div class="flex flex-col items-center gap-12 py-12">
+    <Image src={imInHeadingImg} alt="JDEŠ DO TOHO? SUPER!" height={140} />
+
+    <div class="space-y-4 text-center">
+      <p>
+        Jako student naší Univerzity Tomáše Bati ve Zlíně<br />se jednoduše
+        přihlaš do výzvy pomocí zprávy na email:
+      </p>
+      <a
+        class="block text-ideathon-red text-2xl italic font-semibold"
+        href="mailto:ideathon@utb.cz">ideathon@utb.cz</a
+      >
+      <p>
+        (stačí zde napsat své jméno a fakultu)<br /><br />
+      </p>
+      <p>Děkujeme!</p>
+    </div>
   </div>
 </MainLayout>

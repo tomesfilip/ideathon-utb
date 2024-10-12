@@ -1,7 +1,44 @@
 ---
+import RedirectBtn from '../components/buttons/RedirectBtn.astro';
+import Card from '../components/cards/Card.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+
+import landingImg from '../assets/ideathon-main-bg.webp';
+import landingTabletImg from '../assets/ideathon-main-tablet-bg.webp';
+import landingMobileImg from '../assets/ideathon-main-mobile-bg.webp';
 ---
 
 <MainLayout>
-  <h1>Home</h1>
+  <div class="relative">
+    <picture class="w-full h-[100dvh] sm:h-[calc(90dvh-78px)] object-cover">
+      <source media="(min-width: 1024px)" srcset={landingImg.src} />
+      <source media="(min-width: 576px)" srcset={landingTabletImg.src} />
+      <img src={landingMobileImg.src} alt="Ideathon UTB" />
+    </picture>
+  </div>
+  <div
+    class="flex mx-auto px-4 items-center justify-around flex-wrap py-24 gap-6"
+  >
+    <Card heading="Co je to IDEATHON UTB?">
+      <div slot="card-text-formatted" class="mb-6">
+        Ideathon je intenzivní <span class="bold">24hodinový workshop</span>,
+        který dává studentům příležitost v krátkém čase vyřešit
+        <span class="bold">naléhavé výzvy naší doby</span>. Účastníci workshopu
+        pracují v týmech a díky vzájemné spolupráci navrhují pomocí
+        <span class="bold">design thinkingových metod a inovativních</span> postupů
+        řešení zadaných výzev.
+      </div>
+      <div slot="card-custom-button">
+        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/o-projektu" />
+      </div>
+    </Card>
+    <Card
+      heading="YOUNG AND FRESH IDEAS!"
+      text="Cílem Ideathonu UTB je pomocí výzev od zadavatelů z veřejné sféry zlepšit život ve Zlínském kraji či přímo ve městě Zlíně. Témata musí mít společenský dopad na obyvatele kraje či města, zároveň musí být zadání jasné, realizovatelné a po skončení soutěže implementované - studenti zajistí zpracování, zadavatel financování a samotnou realizaci. Na začátku října zveřejníme témata zadavatelů, ze kterých budou moci studenti UTB vybrat pět, kterým se budou v průběhu soutěže věnovat."
+    >
+      <div slot="card-custom-button">
+        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/temata" />
+      </div>
+    </Card>
+  </div>
 </MainLayout>
