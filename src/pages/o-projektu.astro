@@ -1,6 +1,7 @@
 ---
 import RedirectBtn from '../components/buttons/RedirectBtn.astro';
 import Card from '../components/cards/Card.astro';
+import Container from '../components/Container.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import type { CardType } from '../lib/appTypes';
 
@@ -24,31 +25,33 @@ const cardContents: CardType[] = [
 ---
 
 <MainLayout title="O projektu">
-  <div class="flex flex-col items-center py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div class="space-y-4 flex flex-col items-center gap-3">
-        <Card {...cardContents[0]} />
-        <RedirectBtn text="CHCI SE PŘIHLÁSIT" href="/jdu-do-toho" />
-      </div>
-      <div class="space-y-8">
-        <Card {...cardContents[1]} />
-        <Card heading="YOUNG A FRESH!">
-          <div slot="card-text-formatted" class="mb-6">
-            Jaká témata nás zajímají?<br />V roce 2021 byla témata zaměřená na
-            smart a eko výzvy! Rok 2022 byl rokem evropského předsednictví a
-            zároveň Evropským rokem mládeže. Proto témata byla zacílena právě na
-            mladé lidi. V roce 2023 máme jediné kritérium - témata musí mít
-            společenský dopad pro Zlínský kraj či město Zlín, jeho obyvatele a
-            okolí. Zároveň chceme, aby řešená témata byla po po skončení
-            Ideathonu implementována – studenti zajistí zpracování, instituce
-            financování a realizaci.<br />Ze všech došlých výzev si studenti
-            pomocí hlasování vyberou ke zpracování pět témat.
-          </div>
-          <div slot="card-custom-button">
-            <RedirectBtn text="TÉMATA" href="/temata" />
-          </div>
-        </Card>
+  <Container>
+    <div class="flex flex-col items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="space-y-4 flex flex-col items-center gap-3">
+          <Card {...cardContents[0]} />
+          <RedirectBtn text="CHCI SE PŘIHLÁSIT" href="/jdu-do-toho" />
+        </div>
+        <div class="space-y-8">
+          <Card {...cardContents[1]} />
+          <Card heading="YOUNG A FRESH!">
+            <div slot="card-text-formatted" class="mb-6">
+              Jaká témata nás zajímají?<br />V roce 2021 byla témata zaměřená na
+              smart a eko výzvy! Rok 2022 byl rokem evropského předsednictví a
+              zároveň Evropským rokem mládeže. Proto témata byla zacílena právě
+              na mladé lidi. V roce 2023 máme jediné kritérium - témata musí mít
+              společenský dopad pro Zlínský kraj či město Zlín, jeho obyvatele a
+              okolí. Zároveň chceme, aby řešená témata byla po po skončení
+              Ideathonu implementována – studenti zajistí zpracování, instituce
+              financování a realizaci.<br />Ze všech došlých výzev si studenti
+              pomocí hlasování vyberou ke zpracování pět témat.
+            </div>
+            <div slot="card-custom-button">
+              <RedirectBtn text="TÉMATA" href="/temata" />
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
-  </div>
+  </Container>
 </MainLayout>

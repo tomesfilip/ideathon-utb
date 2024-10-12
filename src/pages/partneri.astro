@@ -4,6 +4,7 @@ import TicImg from '../assets/partners/tic.svg';
 import UpperImg from '../assets/partners/upper.svg';
 import UtbImg from '../assets/partners/utb.svg';
 import PartnerCard from '../components/cards/PartnerCard.astro';
+import Container from '../components/Container.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import type { PartnerCardType } from '../lib/appTypes';
 
@@ -32,9 +33,11 @@ const cardContents: PartnerCardType[] = [
 ---
 
 <MainLayout title="Partneři">
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-y-16 place-items-center items-start py-12 gap-x-8"
-  >
-    {cardContents.map((card) => <PartnerCard {...card} />)}
-  </div>
+  <Container>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-y-16 place-items-center items-start py-12 gap-x-8"
+    >
+      {cardContents.map((card) => <PartnerCard {...card} />)}
+    </div>
+  </Container>
 </MainLayout>
