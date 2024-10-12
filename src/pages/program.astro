@@ -1,0 +1,16 @@
+---
+import Image from 'astro/components/Image.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+
+import ideathonProgram from '../assets/program-bg.svg';
+---
+
+<MainLayout title="Program">
+  <div class="flex flex-col items-center py-12 lg:py-20">
+    <Image
+      src={ideathonProgram}
+      alt="Ideathon program"
+      class="max-w-[1200px] w-full lg:w-3/5"
+    />
+  </div>
+</MainLayout>

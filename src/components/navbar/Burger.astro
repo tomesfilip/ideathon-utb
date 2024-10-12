@@ -1,7 +1,7 @@
 <button
   id="hamburger-btn"
   type="button"
-  class="outline-none appearance-non cursor-pointer lg:hidden relative right-0 size-8 space-y-[5px]"
+  class="outline-none appearance-non cursor-pointer xl:hidden relative right-0 size-8 space-y-[5px]"
   aria-label="Otevřít menu nabídku"
 >
   <div class="line1"></div>
@@ -39,7 +39,7 @@
 <script>
   const hamburgerBtn = document.querySelector('#hamburger-btn');
   const menuOpen = document.querySelector('#nav-item-list');
-  const media = window.matchMedia('(width < 1024px)');
+  const media = window.matchMedia('(width < 1280px)');
 
   const handleToggleMenu = () => {
     if (media.matches) {

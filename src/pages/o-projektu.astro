@@ -23,14 +23,14 @@ const cardContents: CardType[] = [
 ];
 ---
 
-<MainLayout>
-  <div class="about-layout">
-    <div class="about-layout-main space-y-8">
-      <div class="left space-y-4">
+<MainLayout title="O projektu">
+  <div class="flex flex-col items-center py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="space-y-4 flex flex-col items-center gap-3">
         <Card {...cardContents[0]} />
         <RedirectBtn text="CHCI SE PŘIHLÁSIT" href="/jdu-do-toho" />
       </div>
-      <div class="right space-y-8">
+      <div class="space-y-8">
         <Card {...cardContents[1]} />
         <Card heading="YOUNG A FRESH!">
           <div slot="card-text-formatted" class="mb-6">

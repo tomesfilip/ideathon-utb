@@ -1,0 +1,74 @@
+---
+import Image from 'astro/components/Image.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+
+import topicHeadingImg from '../assets/headings/temata.png';
+import Card from '../components/cards/Card.astro';
+
+const cardContents = [
+  {
+    id: 1,
+    text: 'Pomoz nastavit prostředí své alma mater tak, aby se u nás všichni cítili dobře. Vymysli aktivity a komunikaci, které dají najevo, že na UTB věříme v inkluzivní společnost, bojujeme za rovnoprávnost a respekt pro všechny členy společnosti.',
+    selectedTopic: true,
+  },
+  {
+    id: 2,
+    text: 'Jak jít ostatním příkladem v udržitelnosti? Do jakých projektů spojených se zelenější budoucností by měla univerzita investovat čas a peníze? Zkuste myslet low-costově, ale efektivně. Možná stačí malý krok pro UTB, ze kterého se stane velký pro planetu.',
+    selectedTopic: false,
+  },
+  {
+    id: 3,
+    text: 'Vždycky je co zlepšovat. Eurodesk hledá nápady, jak vylepšit prostředí ve Zlíně a kraji s ohledem na alespoň jednu ze 4 současných evropských priorit: udržitelnost, digitalizaci, inkluzi a participaci. Nejlepší projekt získá finance na realizaci.',
+    selectedTopic: true,
+  },
+  {
+    id: 4,
+    text: 'Umí umění zapůsobit i přes obrazovku počítače? A když si odmyslíš text a fotografie? Přemýšlej nad tím, jak chytnout diváka za srdce a v anonymním online prostoru ho nechat vnímat krásu i emoce spojené s uměním.',
+    selectedTopic: false,
+  },
+  {
+    id: 5,
+    text: 'I teenageři patří do galerie. Těžko je tam ale dostat jinak, než se školou. Čemu by měla zlínská krajská galerie věnovat pozornost, jak by měla komunikovat nebo co za aktivity by mohla vymyslet, aby její expozice a program navštěvovali středoškoláci?',
+    selectedTopic: true,
+  },
+  {
+    id: 6,
+    text: 'Navrhni zahradu, ve které se budou potkávat generace. Alzheimer home chce upravit venkovní prostředí pro své klienty a pro předškolní děti ze skupiny Brouček. Vytvoř bezpečné a přístupné místo, které bude oběma generacím dělat radost.',
+    selectedTopic: true,
+  },
+  {
+    id: 7,
+    text: 'Práce na úřadě není jen o papírování. Vymysli, jak široké portfolio profesí na úřadě představit studentům a absolventům učilišť, středních i vysokých škol. Čím by se měl úřad prezentovat, aby probudil v mladých lidech zájem pracovat pro město? ',
+    selectedTopic: false,
+  },
+  {
+    id: 8,
+    text: 'Portál občana je nejlepší pomocník každého obyvatele Zlína. Když o něm tedy ví... Zapracuj na propagaci portálu mezi zlínský lid a zkus se zamyslet nad tím, jaké funkce od něj očekáváš, ale bohužel tam zatím chybí.',
+    selectedTopic: true,
+  },
+];
+
+const sortedContents = [...cardContents].sort(
+  (a, b) => Number(b.selectedTopic) - Number(a.selectedTopic),
+);
+---
+
+<MainLayout title="Témata">
+  <div class="flex flex-col items-center gap-12">
+    <div>
+      <Image src={topicHeadingImg} alt="TÉMATA" height={140} />
+      <p class="mx-auto max-w-max">
+        Hlasování o volbě témat skončilo. Byly vybrána tato témata:
+      </p>
+    </div>
+    <div class="grid items-stretch grid-cols-1 gap-8 lg:grid-cols-2">
+      {
+        sortedContents.map(({ id, selectedTopic, text }) => (
+          <div class="min-h-[200px]">
+            <Card text={text} {selectedTopic} primaryHeading={id + '.'} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

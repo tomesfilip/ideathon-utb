@@ -20,12 +20,12 @@ import Burger from './navbar/Burger.astro';
     </a>
     <ul
       id="nav-item-list"
-      class="transition-transform duration-300 flex flex-col lg:flex-row items-center absolute lg:static space-between w-full gap-x-8 lg:gap-x-12 lg:max-w-max top-[72px] lg:translate-x-0 gap-y-8 bg-white lg:bg-transparent py-8 lg:py-0 z-[2]"
+      class="transition-transform duration-300 flex flex-col xl:flex-row items-center absolute xl:static space-between w-full gap-x-8 xl:gap-x-12 xl:max-w-max top-[72px] xl:translate-x-0 gap-y-8 bg-white xl:bg-transparent py-8 xl:py-0 z-[2]"
     >
       {NAV_LINKS.map((navLink) => <NavLink {...navLink} />)}
     </ul>
     <div
-      class="max-w-max absolute lg:static left-1/2 -translate-x-1/2 lg:translate-x-0"
+      class="max-w-max absolute xl:static left-1/2 -translate-x-1/2 xl:translate-x-0"
     >
       <Socials />
     </div>
@@ -34,7 +34,7 @@ import Burger from './navbar/Burger.astro';
 </header>
 
 <style>
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1280px) {
     #nav-item-list {
       transform: translateX(100%);
     }
