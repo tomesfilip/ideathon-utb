@@ -1,19 +1,109 @@
 ---
-import Image from 'astro/components/Image.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import { clsx } from 'clsx';
 
-import ideathonProgram from '../assets/program-bg.svg';
+import MainLayout from '../layouts/MainLayout.astro';
 import Container from '../components/Container.astro';
+
+const programItems = [
+  {
+    title: 'Úterý 26. 11. 2024',
+    items: [
+      {
+        time: '8:00',
+        title: 'registrace účastníků',
+      },
+      {
+        time: '8:15 – 8:30',
+        title: 'zahájení',
+      },
+      {
+        time: '8:30 – 9:30',
+        title: 'workshop Business Lean Canvas',
+        isBold: true,
+      },
+      {
+        time: '9:30 – 9:45',
+        title: 'coffeebreak',
+      },
+      {
+        time: '9:45 – 10:45',
+        title: 'workshop Prezentace jako dovednost',
+        isBold: true,
+      },
+      {
+        time: '10:45 – 11:00',
+        title: 'coffeebreak',
+      },
+      {
+        time: '11:00 – 12:25',
+        title: 'prezentace zadání',
+        isBold: true,
+      },
+      {
+        time: '12:25 – 12:45',
+        title: 'rozdělení do týmů a losování témat',
+      },
+      {
+        time: '12:45 – 14:00',
+        title: 'coffeebreak a práce na tématech v týmu',
+      },
+      {
+        time: '14:00 – 17:00',
+        title:
+          'mentoring Business Lean Canvas + Prezentace jako dovednost + debrief od zadavatelů',
+        isBold: true,
+      },
+    ],
+  },
+  {
+    title: 'Středa 27. 11. 2024',
+    items: [
+      {
+        time: '13:00',
+        title: 'deadline pro zaslání prezentací na ideathon@utb.cz',
+        isBold: true,
+      },
+      {
+        time: '14:00 – 17:00',
+        title: 'prezentace soutěžících',
+        isBold: true,
+      },
+      {
+        time: '17:00 – 19:00',
+        title: 'vyhlášení vítězů a networking',
+        isBold: true,
+      },
+    ],
+  },
+];
 ---
 
 <MainLayout title="Program">
+  <h2 class="text-5xl xl:text-7xl uppercase font-bold italic">Program</h2>
   <Container>
-    <div class="flex flex-col items-center">
+    <div class="space-y-20">
+      {
+        programItems.map((programItem) => (
+          <div class="space-y-10 flex flex-col items-center w-full">
+            <h3 class="text-ideathon-red text-2xl lg:text-3xl font-bold uppercase italic">
+              {programItem.title}
+            </h3>
+            {programItem.items.map(({ time, title, isBold }) => (
+              <div class="grid grid-cols-5 gap-x-4 w-full max-w-[800px] text-2xl italic">
+                <p class="col-span-2 font-bold">{time}</p>
+                <p class={clsx('col-span-3', isBold && 'font-bold')}>{title}</p>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+    <!-- <div class="flex flex-col items-center w-full">
       <Image
         src={ideathonProgram}
         alt="Ideathon program"
         class="max-w-[1200px] w-full lg:w-3/5"
       />
-    </div>
+    </div> -->
   </Container>
 </MainLayout>
