@@ -6,9 +6,9 @@ import ideathonLogoImg from '../assets/ideathonLogoHome.png';
 import Burger from './navbar/Burger.astro';
 ---
 
-<header class="w-full flex flex-col items-center">
+<header class="w-full flex flex-col items-center relative">
   <nav
-    class="w-full max-w-[1600px] px-4 flex justify-between relative items-center py-2"
+    class="w-full max-w-[1600px] flex justify-between relative items-center py-2 px-4"
   >
     <a href="/" class="flex-shrink-0">
       <img
@@ -25,7 +25,7 @@ import Burger from './navbar/Burger.astro';
       {NAV_LINKS.map((navLink) => <NavLink {...navLink} />)}
     </ul>
     <div
-      class="max-w-max absolute xl:static left-1/2 -translate-x-1/2 xl:translate-x-0"
+      class="max-w-max absolute xl:static left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0"
     >
       <Socials />
     </div>
@@ -36,7 +36,7 @@ import Burger from './navbar/Burger.astro';
 <style>
   @media only screen and (max-width: 1280px) {
     #nav-item-list {
-      transform: translateX(100%);
+      transform: translateX(100vw);
     }
 
     .isNavOpen#nav-item-list {

@@ -8,42 +8,27 @@ import Card from '../components/cards/Card.astro';
 const cardContents = [
   {
     id: 1,
-    text: 'Pomoz nastavit prostředí své alma mater tak, aby se u nás všichni cítili dobře. Vymysli aktivity a komunikaci, které dají najevo, že na UTB věříme v inkluzivní společnost, bojujeme za rovnoprávnost a respekt pro všechny členy společnosti.',
+    text: 'Co tak vytvořit novou zlínskou tradici? Navrhni koncept pro Památník Tomáše Bati, který bude návštěvníky inspirovat k 2 opakovaným návštěvám a každoročnímu připomenutí jeho odkazu.',
     selectedTopic: true,
   },
   {
     id: 2,
-    text: 'Jak jít ostatním příkladem v udržitelnosti? Do jakých projektů spojených se zelenější budoucností by měla univerzita investovat čas a peníze? Zkuste myslet low-costově, ale efektivně. Možná stačí malý krok pro UTB, ze kterého se stane velký pro planetu.',
-    selectedTopic: false,
+    text: 'Jak udělat z Malenovic místo, kde chceš žít, pracovat a rozvíjet se? Vymysli, jak využít Zónu Malenovice tak, aby lákala mladé talenty a podpořila ekonomický růst ve Zlínském kraji. Pomoz vytvořit prostor, který nabídne atraktivní životní styl (nejen) pro kvalifikované profíky.',
+    selectedTopic: true,
   },
   {
     id: 3,
-    text: 'Vždycky je co zlepšovat. Eurodesk hledá nápady, jak vylepšit prostředí ve Zlíně a kraji s ohledem na alespoň jednu ze 4 současných evropských priorit: udržitelnost, digitalizaci, inkluzi a participaci. Nejlepší projekt získá finance na realizaci.',
+    text: 'Probuď v žácích a studentech zvědavost i chuť objevovat fascinující svět čipů. Navrhni interaktivní exponát, který jim ukáže, co všechno se za výrobou čipů skrývá a proč jsou důležité. Vymysli místo, které inspiruje budoucí vědecké talenty pro svět polovodičů a techniku.',
     selectedTopic: true,
   },
   {
     id: 4,
-    text: 'Umí umění zapůsobit i přes obrazovku počítače? A když si odmyslíš text a fotografie? Přemýšlej nad tím, jak chytnout diváka za srdce a v anonymním online prostoru ho nechat vnímat krásu i emoce spojené s uměním.',
-    selectedTopic: false,
+    text: 'Nech se vtáhnout do světa plného inspirace, ve kterém „nejde – neexistuje“. Přemýšlej „out of the box“, stejně jako kdysi Tomáš Baťa, a navrhni nástroj, který naláká mladou generaci k poznávání Baťova regionu, jehož srdcem je město Zlín.',
+    selectedTopic: true,
   },
   {
     id: 5,
-    text: 'I teenageři patří do galerie. Těžko je tam ale dostat jinak, než se školou. Čemu by měla zlínská krajská galerie věnovat pozornost, jak by měla komunikovat nebo co za aktivity by mohla vymyslet, aby její expozice a program navštěvovali středoškoláci?',
-    selectedTopic: true,
-  },
-  {
-    id: 6,
-    text: 'Navrhni zahradu, ve které se budou potkávat generace. Alzheimer home chce upravit venkovní prostředí pro své klienty a pro předškolní děti ze skupiny Brouček. Vytvoř bezpečné a přístupné místo, které bude oběma generacím dělat radost.',
-    selectedTopic: true,
-  },
-  {
-    id: 7,
-    text: 'Práce na úřadě není jen o papírování. Vymysli, jak široké portfolio profesí na úřadě představit studentům a absolventům učilišť, středních i vysokých škol. Čím by se měl úřad prezentovat, aby probudil v mladých lidech zájem pracovat pro město? ',
-    selectedTopic: false,
-  },
-  {
-    id: 8,
-    text: 'Portál občana je nejlepší pomocník každého obyvatele Zlína. Když o něm tedy ví... Zapracuj na propagaci portálu mezi zlínský lid a zkus se zamyslet nad tím, jaké funkce od něj očekáváš, ale bohužel tam zatím chybí.',
+    text: 'Jak nadchnout firmy pro společensky odpovědné podnikání a přitáhnout nové B2B partnery? Navrhni způsob, jak představit zodpovědný a udržitelný přístup k investování a byznysu tak, aby spojil běžné firmy se sociálními podniky a rozjel nová partnerství.',
     selectedTopic: true,
   },
 ];
@@ -54,7 +39,7 @@ const sortedContents = [...cardContents].sort(
 ---
 
 <MainLayout title="Témata">
-  <div class="flex flex-col items-center gap-12 py-12">
+  <div class="flex flex-col items-center gap-12 py-12 px-4">
     <div>
       <Image src={topicHeadingImg} alt="TÉMATA" height={140} />
       <p class="mx-auto max-w-max text-lg font-semibold">
