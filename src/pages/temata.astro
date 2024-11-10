@@ -8,7 +8,7 @@ import Card from '../components/cards/Card.astro';
 const cardContents = [
   {
     id: 1,
-    text: 'Co tak vytvořit novou zlínskou tradici? Navrhni koncept pro Památník Tomáše Bati, který bude návštěvníky inspirovat k 2 opakovaným návštěvám a každoročnímu připomenutí jeho odkazu.',
+    text: 'Co tak vytvořit novou zlínskou tradici? Navrhni koncept pro Památník Tomáše Bati, který bude návštěvníky inspirovat k opakovaným návštěvám a každoročnímu připomenutí jeho odkazu.',
     selectedTopic: true,
   },
   {
@@ -42,10 +42,10 @@ const sortedContents = [...cardContents].sort(
   <div class="flex flex-col items-center gap-12 py-12 px-4">
     <div>
       <Image src={topicHeadingImg} alt="TÉMATA" height={140} />
-      <p class="mx-auto max-w-max text-lg font-semibold">
+      <!-- <p class="mx-auto max-w-max text-lg font-semibold">
         Nová témata představíme 1. 11. 2024<br />Zatím se můžeš podívat, s
         jakými tématy si musely týmy poradit v roce 2023.
-      </p>
+      </p> -->
     </div>
     <div class="grid items-stretch grid-cols-1 gap-8 lg:grid-cols-2">
       {
