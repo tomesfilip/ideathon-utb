@@ -1,21 +1,12 @@
 ---
 import RedirectBtn from '../components/buttons/RedirectBtn.astro';
 import Card from '../components/cards/Card.astro';
+import HeroBanner from '../components/home/HeroBanner.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-
-import landingImg from '../assets/ideathon-hero.webp';
-import landingTabletImg from '../assets/ideathon-hero-tablet.webp';
-import landingMobileImg from '../assets/ideathon-hero-mob.webp';
 ---
 
 <MainLayout>
-  <div class="relative">
-    <picture class="w-full h-[100dvh] sm:h-[calc(90dvh-78px)] object-cover">
-      <source media="(min-width: 1024px)" srcset={landingImg.src} />
-      <source media="(min-width: 576px)" srcset={landingTabletImg.src} />
-      <img src={landingMobileImg.src} alt="Ideathon UTB" />
-    </picture>
-  </div>
+  <HeroBanner />
   <div
     class="flex mx-auto px-4 items-center justify-around flex-wrap py-24 gap-6"
   >
