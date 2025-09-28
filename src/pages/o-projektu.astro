@@ -5,8 +5,6 @@ import Container from '../components/Container.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import type { CardType } from '../lib/appTypes';
 
-import aboutImg from '../assets/about-img.svg';
-
 const cardContents: CardType[] = [
   {
     heading: 'Co je to IDEATHON UTB?',
@@ -28,14 +26,14 @@ const cardContents: CardType[] = [
 
 <MainLayout title="O projektu">
   <Container>
-    <img
+    <!-- <img
       src={aboutImg.src}
       width={aboutImg.width}
       height={aboutImg.height}
       alt="O projektu"
       class="absolute size-[600px] z-0 -top-32 sm:-top-10 md:top-0 -left-10 md:left-20"
-    />
-    <div class="flex flex-col items-center pt-40 sm:pt-80">
+    /> -->
+    <div class="flex flex-col items-center">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 z-10">
         <div class="space-y-4 flex flex-col items-center gap-3">
           <Card {...cardContents[0]} />
