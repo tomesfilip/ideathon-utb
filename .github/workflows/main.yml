@@ -7,7 +7,6 @@ on:
 
 jobs:
   web-deploy:
-    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,6 +19,21 @@ jobs:
 
       - name: Build project
         run: npm ci && npm run build
+
+      - name: Install openconnect
+        run: sudo apt-get update && sudo apt-get install -y openconnect
+
+      - name: Connect to Cisco AnyConnect VPN
+        run: |
+          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect \
+            --user=${{ secrets.VPN_USERNAME }} \
+            --passwd-on-stdin \
+            ${{ secrets.VPN_SERVER }} \
+            --background
+          sleep 10
+
+      - name: Verify VPN connection
+        run: curl ifconfig.me
 
       - name: SFTP uploader
         uses: wangyucode/sftp-upload-action@v2.0.2
