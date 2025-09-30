@@ -35,6 +35,15 @@ jobs:
       - name: Verify VPN connection
         run: curl ifconfig.me
 
+      - name: Debug VPN reachability
+        run: |
+          echo "Testing DNS:"
+          nslookup ${{ secrets.FTP_SERVER }} || true
+          echo "Testing TCP port 22:"
+          nc -vz ${{ secrets.FTP_SERVER }} 22 || true
+          echo "Routing table:"
+          ip route
+
       - name: SFTP uploader
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
