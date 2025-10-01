@@ -1,8 +1,5 @@
 ---
-import Image from 'astro/components/Image.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-
-import topicHeadingImg from '../assets/headings/temata.png';
 import Card from '../components/cards/Card.astro';
 
 const cardContents = [
@@ -41,7 +38,9 @@ const sortedContents = [...cardContents].sort(
 <MainLayout title="Témata">
   <div class="flex flex-col items-center gap-12 py-12 px-4">
     <div>
-      <Image src={topicHeadingImg} alt="TÉMATA" height={140} />
+      <h2 class="text-5xl xl:text-7xl uppercase font-bold italic text-white">
+        Témata
+      </h2>
       <!-- <p class="mx-auto max-w-max text-lg font-semibold">
         Nová témata představíme 1. 11. 2024<br />Zatím se můžeš podívat, s
         jakými tématy si musely týmy poradit v roce 2023.

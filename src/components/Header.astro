@@ -2,8 +2,9 @@
 import { NAV_LINKS } from '../lib/constants';
 import NavLink from './navbar/NavLink.astro';
 import Socials from './Socials.astro';
-import ideathonLogoImg from '../assets/ideathonLogoHome.png';
+import ideathonLogoImg from '../assets/ideathon-logo.svg';
 import Burger from './navbar/Burger.astro';
+import Image from 'astro/components/Image.astro';
 ---
 
 <header class="w-full flex flex-col items-center relative z-10">
@@ -11,11 +12,12 @@ import Burger from './navbar/Burger.astro';
     class="w-full max-w-[1600px] flex justify-between relative items-center py-2 px-4"
   >
     <a href="/" class="flex-shrink-0">
-      <img
-        src={ideathonLogoImg.src}
+      <Image
+        src={ideathonLogoImg}
         alt="Ideathon logo"
-        width={60}
-        height={60}
+        width={ideathonLogoImg.width}
+        height={ideathonLogoImg.height}
+        class="w-auto h-[46px]"
       />
     </a>
     <ul

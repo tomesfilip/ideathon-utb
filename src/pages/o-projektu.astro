@@ -47,7 +47,11 @@ const cardContents: CardType[] = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 z-10">
         <div class="space-y-4 flex flex-col items-center gap-3">
           <Card {...cardContents[0]} />
-          <RedirectBtn text="CHCI SE PŘIHLÁSIT" href="/jdu-do-toho" />
+          <RedirectBtn
+            text="CHCI SE PŘIHLÁSIT"
+            href="/jdu-do-toho"
+            isBlack={false}
+          />
         </div>
         <div class="space-y-8">
           <Card {...cardContents[1]} />

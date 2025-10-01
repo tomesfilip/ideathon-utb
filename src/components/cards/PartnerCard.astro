@@ -1,13 +1,24 @@
 ---
+import type { ImageMetadata } from 'astro';
+import Image from 'astro/components/Image.astro';
+
 interface Props {
-  logo: string;
+  logo: ImageMetadata;
   logoAlt: string;
   text: string;
 }
 const { logo, logoAlt, text } = Astro.props;
 ---
 
-<div class="max-w-[400px] text-center w-full space-y-6">
-  <img src={logo} alt={logoAlt} class="w-full max-h-8" />
-  <p>{text}</p>
+<div
+  class="max-w-[400px] lg:max-w-[500px] text-center text-white w-full space-y-6"
+>
+  <Image
+    src={logo}
+    alt={logoAlt}
+    width={logo.width}
+    height={logo.height}
+    class="w-full max-h-8"
+  />
+  <p class="lg:text-lg">{text}</p>
 </div>

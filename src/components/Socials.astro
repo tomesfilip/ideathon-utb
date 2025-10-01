@@ -1,17 +1,18 @@
 ---
-import fbIcon from '../assets/header/fbIcon.svg';
-import igIcon from '../assets/header/igIcon.svg';
+import Image from 'astro/components/Image.astro';
+import fbIcon from '../assets/header/fb.svg';
+import igIcon from '../assets/header/ig.svg';
 import Link from './links/Link.astro';
 
 const socialItems = [
   {
     link: 'https://www.facebook.com/upperzlin/',
-    img: fbIcon.src,
+    img: fbIcon,
     imgAlt: 'facebook ikona',
   },
   {
     link: 'https://www.instagram.com/upper_zlin/',
-    img: igIcon.src,
+    img: igIcon,
     imgAlt: 'instagram ikona',
   },
 ];
@@ -20,9 +21,14 @@ const socialItems = [
 <ul class="flex items-center justify-between gap-6 flex-shrink-0">
   {
     socialItems.map((social) => (
-      <li class="size-5">
+      <li class="size-6">
         <Link linkTo={social.link} isBlank>
-          <img width={20} height={20} src={social.img} alt={social.imgAlt} />
+          <Image
+            width={social.img.width}
+            height={social.img.height}
+            src={social.img}
+            alt={social.imgAlt}
+          />
         </Link>
       </li>
     ))

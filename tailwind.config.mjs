@@ -7,6 +7,7 @@ export default {
         'ideathon-red': '#FF4B41',
         'ideathon-purple': '#5F2583',
         'ideathon-grey': '#ECECEC',
+        'dark-purple': '#6549EA',
       },
     },
   },

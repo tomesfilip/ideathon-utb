@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 export type navLinkType = {
   link: string;
   text: string;
@@ -14,7 +16,7 @@ export type CardType = {
 };
 
 export type PartnerCardType = {
-  logo: string;
+  logo: ImageMetadata;
   logoAlt: string;
   text: string;
 };
