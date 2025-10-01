@@ -5,56 +5,33 @@ import mainBg from '../../assets/imgs/main-bg-2.webp';
 import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
 ---
 
-<div
-  class="relative w-full h-[100dvh] sm:h-[calc(90dvh-78px)] px-[4%] lg:px-[10%] py-[8%] hero-banner flex justify-between items-center gap-x-12 gap-y-10 flex-wrap"
->
-  <link
-    rel="preload"
-    as="image"
-    href={mainBgMob.src}
-    media="(max-width: 1023px)"
-  />
-  <link
-    rel="preload"
-    as="image"
-    href={mainBg.src}
-    media="(min-width: 1024px)"
-  />
-  <Image
-    loading="eager"
-    src={logo}
-    width={logo.width}
-    height={logo.height}
-    alt="Ideathon UTB logo"
-    class="max-w-[300px] max-h-[260px] w-[calc(100%-40px)] h-auto z-10"
-  />
-  <!-- <h2 class="text-5xl md:text-7xl text-white font-bold">
-    IDEA<br />THON<br />UTB
-  </h2> -->
-  <div class="text-white space-y-8">
-    <h2 class="text-4xl md:text-5xl text-white font-bold z-10">
-      25.–26.11.2025<br />Baťovy závody trochu jinak
-    </h2>
-    <p class="text-lg md:text-xl font-semibold">více info zveřejníme brzy</p>
-  </div>
-  <!-- <picture class="w-full h-[100dvh] sm:h-[calc(90dvh-78px)] object-cover">
-    <source media="(min-width: 1024px)" srcset={landingImg.src} />
-    <source media="(min-width: 576px)" srcset={landingTabletImg.src} />
-    <img src={landingMobileImg.src} alt="Ideathon UTB" />
-  </picture> -->
-</div>
+<div class="relative w-full h-[100dvh] sm:h-[calc(90dvh-78px)]">
+  <picture>
+    <source media="(min-width: 1024px)" srcset={mainBg.src} />
+    <Image
+      loading="eager"
+      src={mainBgMob}
+      alt="Ideathon UTB background"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </picture>
 
-<style>
-  .hero-banner {
-    background: url('../../assets/imgs/main-bg-mob-2.webp') no-repeat center;
-    background-size: cover;
-    will-change: transform;
-    transform: translateZ(0);
-  }
-  @media (min-width: 1024px) {
-    .hero-banner {
-      background: url('../../assets/imgs/main-bg-2.webp') no-repeat center;
-      background-size: cover;
-    }
-  }
-</style>
+  <div
+    class="relative px-[4%] lg:px-[10%] py-[8%] h-full flex justify-between items-center gap-x-12 gap-y-10 flex-wrap"
+  >
+    <Image
+      loading="eager"
+      src={logo}
+      width={logo.width}
+      height={logo.height}
+      alt="Ideathon UTB logo"
+      class="max-w-[300px] max-h-[260px] w-[calc(100%-40px)] h-auto z-10"
+    />
+    <div class="text-white space-y-8">
+      <h2 class="text-4xl md:text-5xl text-white font-bold z-10">
+        25.–26.11.2025<br />Baťovy závody trochu jinak
+      </h2>
+      <p class="text-lg md:text-xl font-semibold">více info zveřejníme brzy</p>
+    </div>
+  </div>
+</div>
