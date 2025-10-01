@@ -1,7 +1,4 @@
 ---
-// import landingImg from '../../assets/ideathon-hero.webp';
-// import landingTabletImg from '../../assets/ideathon-hero-tablet.webp';
-// import landingMobileImg from '../../assets/ideathon-hero-mob.webp';
 import Image from 'astro/components/Image.astro';
 import logo from '../../assets/ideathon-logo.svg';
 import mainBg from '../../assets/imgs/main-bg-2.webp';
@@ -11,10 +8,18 @@ import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
 <div
   class="relative w-full h-[100dvh] sm:h-[calc(90dvh-78px)] px-[4%] lg:px-[10%] py-[8%] hero-banner flex justify-between items-center gap-x-12 gap-y-10 flex-wrap"
 >
-  <picture class="hidden">
-    <source media="(width >= 1024px)" srcset={mainBg.src} class="hidden" />
-    <img src={mainBgMob.src} alt="Ideathon UTB" class="hidden" />
-  </picture>
+  <link
+    rel="preload"
+    as="image"
+    href={mainBgMob.src}
+    media="(max-width: 1023px)"
+  />
+  <link
+    rel="preload"
+    as="image"
+    href={mainBg.src}
+    media="(min-width: 1024px)"
+  />
   <Image
     loading="eager"
     src={logo}
@@ -43,6 +48,8 @@ import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
   .hero-banner {
     background: url('../../assets/imgs/main-bg-mob-2.webp') no-repeat center;
     background-size: cover;
+    will-change: transform;
+    transform: translateZ(0);
   }
   @media (min-width: 1024px) {
     .hero-banner {
