@@ -4,28 +4,33 @@ import Card from '../components/cards/Card.astro';
 
 const cardContents = [
   {
-    id: 1,
-    text: 'Co tak vytvořit novou zlínskou tradici? Navrhni koncept pro Památník Tomáše Bati, který bude návštěvníky inspirovat k opakovaným návštěvám a každoročnímu připomenutí jeho odkazu.',
+    id: 'Design veřejného prostoru ve Zlíně podle potřeb mladých lidí.',
+    sponsor: 'MĚSTO ZLÍN',
+    text: 'Hledejte nápady, jak vytvořit nebo proměnit veřejné prostory ve Zlíně tak, aby byly přívětivé, bezpečné a podle představ mladé generace. Vaše řešení může být drobný zásah i odvážná vize. Pracujte s konkrétními místy ve městě.',
     selectedTopic: true,
   },
   {
-    id: 2,
-    text: 'Jak udělat z Malenovic místo, kde chceš žít, pracovat a rozvíjet se? Vymysli, jak využít Zónu Malenovice tak, aby lákala mladé talenty a podpořila ekonomický růst ve Zlínském kraji. Pomoz vytvořit prostor, který nabídne atraktivní životní styl (nejen) pro kvalifikované profíky.',
+    id: 'Název: Tahle obec je i pro mladý. Jak přilákat a udržet mladé talenty v okrajových oblastech Zlínského kraje.',
+    sponsor: 'TIC ZLÍN',
+    text: 'Anotace: Vžijte se do role stratéga, který má jednoduchý úkol – přilákat a udržet talentované mladé lidi v okrajových oblastech Zlínského kraje na úrovni obcí s rozšířenou působností. Analyzujte a zjistěte, co mladí lidé skutečně potřebují pro spokojenější život v regionu a na základě dat navrhněte strategii, za kterou by se nemusel stydět žádný policy maker. Součástí je také návrh komunikační kampaně, protože jinak se o projektu nikdo nedozví!',
     selectedTopic: true,
   },
   {
-    id: 3,
-    text: 'Probuď v žácích a studentech zvědavost i chuť objevovat fascinující svět čipů. Navrhni interaktivní exponát, který jim ukáže, co všechno se za výrobou čipů skrývá a proč jsou důležité. Vymysli místo, které inspiruje budoucí vědecké talenty pro svět polovodičů a techniku.',
+    id: 'Mapa regionálních producentů',
+    text: 'Cílem je vytvořit mapu regionálních producentů, která bude plnit funkci „výkladní skříně regionu“. Mapa představí, co v kraji máme, nač jsme pyšní – tedy producenty – výrobce potravin, zemědělce a vinaře. Je třeba navrhnout, jak bude vypadat, fungovat, jak dostat vytvořenou mapu do povědomí veřejnosti. Cílovou skupinou je široká veřejnost, občané i turisté. Mapa by měla být funkční, udržitelná a přívětivá pro uživatele i producenty samotné s možností dalšího rozšíření o řemesla, gastro, agroturistiku a další.',
+    sponsor: 'ZLÍNSKÝ KRAJ',
     selectedTopic: true,
   },
   {
-    id: 4,
-    text: 'Nech se vtáhnout do světa plného inspirace, ve kterém „nejde – neexistuje“. Přemýšlej „out of the box“, stejně jako kdysi Tomáš Baťa, a navrhni nástroj, který naláká mladou generaci k poznávání Baťova regionu, jehož srdcem je město Zlín.',
+    id: 'Bezpečný prostor pro mladé: jak aktivizovat a zapojit teenagery / gen Z do života na Jižních Svazích?',
+    sponsor: 'KOMA MODULAR',
+    text: 'Teenageři a gen Z ve Zlíně často nemají prostor, kde by mohli trávit čas bezpečně, smysluplně a bez finančních bariér. Nový Čech chce být pro mladou generaci stejně přitažlivým a bezpečným místem, jako pro ostatní cílové skupiny – rodiče s dětmi, seniory i kreativní komunity.',
     selectedTopic: true,
   },
   {
-    id: 5,
-    text: 'Jak nadchnout firmy pro společensky odpovědné podnikání a přitáhnout nové B2B partnery? Navrhni způsob, jak představit zodpovědný a udržitelný přístup k investování a byznysu tak, aby spojil běžné firmy se sociálními podniky a rozjel nová partnerství.',
+    id: 'Moderní digitální platforma pro správu odborných praxí studentů zdravotnických oborů.',
+    sponsor: 'KOMA MODULAR',
+    text: 'Představ si svět, kde studium není jen o skriptech, knihách a zkouškách, ale o skutečné zkušenosti, kterou studenti získávají v reálné praxi. Stejně jako Tomáš Baťa kdysi spojoval teorii s praxí a vychovával osobnosti schopné řídit budoucnost, i ty máš možnost přispět k nové cestě vzdělávání. Vaším úkolem je navrhnout moderní digitální platformu pro správu odborných praxí studentů zdravotnických oborů.',
     selectedTopic: true,
   },
 ];
@@ -48,9 +53,14 @@ const sortedContents = [...cardContents].sort(
     </div>
     <div class="grid items-stretch grid-cols-1 gap-8 lg:grid-cols-2">
       {
-        sortedContents.map(({ id, selectedTopic, text }) => (
+        sortedContents.map(({ id, selectedTopic, text, sponsor }) => (
           <div class="min-h-[200px]">
-            <Card text={text} {selectedTopic} primaryHeading={id + '.'} />
+            <Card
+              text={text}
+              {selectedTopic}
+              primaryHeading={id.toString()}
+              sponsor={sponsor}
+            />
           </div>
         ))
       }

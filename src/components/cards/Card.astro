@@ -7,6 +7,7 @@ interface Props {
   text?: string;
   textTwo?: string;
   textExtra?: string;
+  sponsor?: string;
 }
 const {
   selectedTopic = true,
@@ -16,11 +17,12 @@ const {
   text,
   textTwo,
   textExtra,
+  sponsor,
 } = Astro.props;
 ---
 
 <div
-  class={`bg-ideathon-grey py-7 px-8 max-w-[460px] h-auto text-center flex flex-col items-center rounded-[50px] shadow-md ${selectedTopic ? 'opacity-100' : 'opacity-30 select-none'}`}
+  class={`bg-ideathon-grey py-7 px-8 max-w-[460px] relative h-auto text-center flex flex-col items-center rounded-[50px] shadow-md ${selectedTopic ? 'opacity-100' : 'opacity-30 select-none'}`}
 >
   {primaryHeading && <h3 class="font-bold italic mb-5">{primaryHeading}</h3>}
   {
@@ -35,4 +37,12 @@ const {
   {headingTwo && <h3 class="font-bold italic mb-5">{headingTwo}</h3>}
   {textTwo && <div>{textTwo}</div>}
   <slot name="card-custom-button" />
+
+  {
+    sponsor && (
+      <p class="absolute bottom-4 right-12 italic text-sm text-gray-600">
+        Zadavatel: {sponsor}
+      </p>
+    )
+  }
 </div>
