@@ -10,7 +10,7 @@ const isActive = Astro.url.pathname.includes(link);
 
 <li>
   <a
-    class={`uppercase font-medium px-3 py-1.5 border border-transparent hover:border-white focus:border-white transition-all duration-200 will-change-transform hover:text-ideathon-red ${isActive ? 'text-ideathon-red border-white' : 'text-white'}`}
+    class={`uppercase font-medium px-3 py-1.5 border border-transparent hover:border-white focus:border-white transition-all duration-200 will-change-transform hover:text-white ${isActive ? 'text-white border-white' : 'text-white'}`}
     href={link}>{text}</a
   >
 </li>

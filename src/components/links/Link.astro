@@ -2,8 +2,9 @@
 interface Props {
   linkTo: string;
   isBlank?: boolean;
+  ariaLabel?: string;
 }
-const { linkTo = './', isBlank } = Astro.props;
+const { linkTo = './', isBlank, ariaLabel } = Astro.props;
 ---
 
 <a
@@ -11,6 +12,7 @@ const { linkTo = './', isBlank } = Astro.props;
   href={linkTo}
   target={isBlank ? '_blank' : '_self'}
   rel={isBlank ? 'noopener noreferrer' : ''}
+  aria-label={ariaLabel ? ariaLabel : undefined}
 >
   <slot />
 </a>
