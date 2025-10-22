@@ -4,6 +4,7 @@ import ticImg from '../assets/footer/tic.svg';
 import upperImg from '../assets/footer/upper.svg';
 import utbImg from '../assets/footer/utb.svg';
 import zlkImg from '../assets/footer/zk-logo-white.svg';
+import euImg from '../assets/footer/eu.svg';
 
 import MailLink from './links/MailLink.astro';
 import Link from './links/Link.astro';
@@ -36,6 +37,10 @@ const logos = [
     link: 'https://www.krajbezhranic.cz/',
     alt: 'Zlínský kraj',
   },
+  {
+    logo: euImg,
+    alt: 'Evropská unie a ministerstvo školství, mládeže a tělovýchovy',
+  },
 ];
 ---
 
@@ -44,13 +49,20 @@ const logos = [
 >
   <LocationFooter />
   <div
-    class="w-full max-w-[1600px] flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-10 md:gap-20 px-4 justify-center items-center"
+    class="w-full max-w-[1600px] flex flex-col sm:flex-row flex-wrap gap-y-5 sm:gap-y-6 gap-x-8 sm:gap-x-10
+  md:gap-x-20 md:gap-y-8 px-4 justify-center items-center"
   >
     {
       logos.map((logo) => (
-        <Link linkTo={logo.link} isBlank={true}>
-          <Image src={logo.logo} alt={logo.alt} />
-        </Link>
+        <Fragment key={logo.alt}>
+          {logo.link ? (
+            <Link linkTo={logo.link} isBlank={true}>
+              <Image src={logo.logo} alt={logo.alt} />
+            </Link>
+          ) : (
+            <Image src={logo.logo} alt={logo.alt} />
+          )}
+        </Fragment>
       ))
     }
   </div>
