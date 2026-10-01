@@ -8,7 +8,7 @@ import IdeathonLogo from './icons/IdeathonLogo.astro';
 
 <header class="w-full flex flex-col items-center relative z-10">
   <nav
-    class="w-full max-w-[1600px] flex justify-between relative items-center py-2 px-4"
+    class="w-full max-w-[1600px] flex justify-between relative items-center py-2 px-4 lg:px-12"
   >
     <a
       href="/"
@@ -19,7 +19,7 @@ import IdeathonLogo from './icons/IdeathonLogo.astro';
     </a>
     <ul
       id="nav-item-list"
-      class="transition-transform duration-300 flex flex-col xl:flex-row items-center absolute xl:static space-between w-full gap-x-8 xl:gap-x-12 xl:max-w-max top-[62px] xl:translate-x-0 gap-y-8 bg-dark-purple xl:bg-transparent py-8 xl:py-0 z-[2] left-0"
+      class="transition-transform duration-300 flex flex-col xl:flex-row items-center absolute xl:static space-between w-full gap-x-8 xl:gap-x-12 xl:max-w-max top-[62px] xl:translate-x-0 gap-y-8 bg-ideathon-bg xl:bg-transparent py-8 xl:py-0 z-[2] left-0"
     >
       {NAV_LINKS.map((navLink) => <NavLink {...navLink} />)}
     </ul>

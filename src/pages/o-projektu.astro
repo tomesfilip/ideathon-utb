@@ -5,7 +5,7 @@ import Card from '../components/cards/Card.astro';
 import Container from '../components/Container.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import type { CardType } from '../lib/appTypes';
-import aboutImg from '../assets/ideathon-about.svg';
+import aboutImg from '../assets/ideathon-about-26.svg';
 
 const cardContents: CardType[] = [
   {
@@ -34,7 +34,7 @@ const cardContents: CardType[] = [
       width={aboutImg.width}
       height={aboutImg.height}
       alt="O projektu"
-      class="absolute w-[600px] h-auto z-0 top-0 sm:-top-10 md:top-0 -left-10 md:left-20"
+      class="absolute w-[600px] h-auto z-0 top-0 sm:-top-10 md:-top-24 -left-10 md:left-12"
     />
     <!-- <img
       src={aboutImg.src}
@@ -68,7 +68,7 @@ const cardContents: CardType[] = [
               pomocí hlasování vyberou ke zpracování pět témat.
             </div>
             <div slot="card-custom-button">
-              <RedirectBtn text="TÉMATA" href="/temata" />
+              <RedirectBtn text="TÉMATA" href="/temata" isBlack={false} />
             </div>
           </Card>
         </div>

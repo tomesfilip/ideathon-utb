@@ -5,7 +5,7 @@ import HeroBanner from '../components/home/HeroBanner.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout>
+<MainLayout h1="Ideathon UTB 2026 – Jak obstojíš před skutečnou výzvou?">
   <HeroBanner />
   <div
     class="flex mx-auto px-4 items-center justify-around flex-wrap py-24 gap-6"
@@ -20,7 +20,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         řešení zadaných výzev.
       </div>
       <div slot="card-custom-button">
-        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/o-projektu" />
+        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/o-projektu" isBlack={false} />
       </div>
     </Card>
     <Card
@@ -28,7 +28,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       text="Cílem Ideathonu UTB je pomocí výzev od zadavatelů z veřejné sféry zlepšit život ve Zlínském kraji či přímo ve městě Zlíně. Témata musí mít společenský dopad na obyvatele kraje či města, zároveň musí být zadání jasné, realizovatelné a po skončení soutěže implementované - studenti zajistí zpracování, zadavatel financování a samotnou realizaci. Na začátku října zveřejníme témata zadavatelů, ze kterých budou moci studenti UTB vybrat pět, kterým se budou v průběhu soutěže věnovat."
     >
       <div slot="card-custom-button">
-        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/temata" />
+        <RedirectBtn text="DOZVĚDĚT SE VÍC" href="/temata" isBlack={false} />
       </div>
     </Card>
   </div>

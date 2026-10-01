@@ -1,8 +1,8 @@
 ---
 import Image from 'astro/components/Image.astro';
 import logo from '../../assets/ideathon-logo.svg';
-import mainBg from '../../assets/imgs/main-bg-2.webp';
-import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
+import mainBg from '../../assets/imgs/main-bg-26.webp';
+import mainBgMob from '../../assets/imgs/main-bg-mob-26.webp';
 ---
 
 <div class="relative w-full h-[100dvh] sm:h-[calc(90dvh-78px)]">
@@ -11,15 +11,14 @@ import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
     <Image
       loading="eager"
       src={mainBgMob}
-      width={1920}
-      height={1080}
+      width={1080}
       alt="Ideathon UTB background"
       class="absolute left-0 top-0 size-full object-cover will-change-transform"
     />
   </picture>
 
   <div
-    class="relative px-[4%] lg:px-[10%] py-[8%] h-full flex justify-between items-center gap-x-12 gap-y-10 flex-wrap"
+    class="relative px-[4%] lg:px-[5%] py-[8%] h-full grid grid-cols-1 md:grid-cols-2 items-center gap-x-12 gap-y-10 flex-wrap max-w-[1920px] mx-auto"
   >
     <Image
       loading="eager"
@@ -27,13 +26,16 @@ import mainBgMob from '../../assets/imgs/main-bg-mob-2.webp';
       width={logo.width}
       height={logo.height}
       alt="Ideathon UTB logo"
-      class="max-w-[300px] max-h-[260px] w-[calc(100%-40px)] h-auto z-[2]"
+      class="max-h-52 max-w-60 lg:max-w-75 lg:max-h-65 w-[calc(100%-40px)] h-auto z-2"
     />
     <div class="text-white space-y-8">
-      <h2 class="text-4xl md:text-5xl text-white font-bold z-[2]">
-        25.–26.11.2025<br />Baťovy závody trochu jinak
+      <h2 class="text-4xl md:text-5xl text-ideathon-primary font-black">
+        24.–25.11.2026<br />
       </h2>
-      <p class="text-lg md:text-xl font-semibold">více info zveřejníme brzy</p>
+      <h2 class="text-4xl md:text-5xl text-white font-medium z-2">
+        Jak obstojiš před<br />skutečnou výzvou?
+      </h2>
+      <!-- <p class="text-lg md:text-xl font-semibold">více info zveřejníme brzy</p> -->
     </div>
   </div>
 </div>
