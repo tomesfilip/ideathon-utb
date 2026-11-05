@@ -1,6 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import Card from '../components/cards/Card.astro';
+import RedirectBtn from '../components/buttons/RedirectBtn.astro';
+
+// Dočasně skryto, dokud nezveřejníme nová témata – pak přepnout na true
+const topicsPublished = false;
 
 const cardContents = [
   {
@@ -51,19 +55,40 @@ const sortedContents = [...cardContents].sort(
         jakými tématy si musely týmy poradit v roce 2023.
       </p> -->
     </div>
-    <div class="grid items-stretch grid-cols-1 gap-8 lg:grid-cols-2">
-      {
-        sortedContents.map(({ id, selectedTopic, text, sponsor }) => (
-          <div class="min-h-[200px]">
-            <Card
-              text={text}
-              {selectedTopic}
-              primaryHeading={id.toString()}
-              sponsor={sponsor}
-            />
+    {
+      topicsPublished ? (
+        <div class="grid items-stretch grid-cols-1 gap-8 lg:grid-cols-2">
+          {sortedContents.map(({ id, selectedTopic, text, sponsor }) => (
+            <div class="min-h-[200px]">
+              <Card
+                text={text}
+                {selectedTopic}
+                primaryHeading={id.toString()}
+                sponsor={sponsor}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Card heading="Témata právě připravujeme">
+          <div slot="card-text-formatted" class="mb-6 space-y-4">
+            <p>
+              Společně se zadavateli z veřejné sféry teď ladíme výzvy pro
+              letošní ročník. Hledáme témata, která mají skutečný dopad na život
+              ve Zlínském kraji a městě Zlíně a která se po skončení Ideathonu
+              opravdu zrealizují.
+            </p>
+            <p>
+              Než je zveřejníme, můžeš se připravit už teď: dej dohromady tým,
+              mrkni na základy design thinkingu a sleduj náš Facebook a
+              Instagram, ať ti nic neuteče.
+            </p>
           </div>
-        ))
-      }
-    </div>
+          <div slot="card-custom-button">
+            <RedirectBtn text="JDU DO TOHO" href="/jdu-do-toho" isBlack={false} />
+          </div>
+        </Card>
+      )
+    }
   </div>
 </MainLayout>

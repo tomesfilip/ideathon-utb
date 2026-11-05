@@ -22,12 +22,12 @@ const {
 ---
 
 <div
-  class={`bg-ideathon-grey py-7 px-8 max-w-[460px] relative h-auto text-center flex flex-col items-center rounded-[50px] shadow-md ${selectedTopic ? 'opacity-100' : 'opacity-30 select-none'}`}
+  class={`bg-ideathon-card text-white py-7 px-8 max-w-[460px] relative h-auto text-center flex flex-col items-center rounded-[50px] shadow-md ${selectedTopic ? 'opacity-100' : 'opacity-30 select-none'}`}
 >
   {primaryHeading && <h3 class="font-bold italic mb-5">{primaryHeading}</h3>}
   {
     heading && (
-      <h3 class="font-bold italic mb-3 text-ideathon-purple">{heading}</h3>
+      <h3 class="font-bold italic mb-3 text-ideathon-primary">{heading}</h3>
     )
   }
   {text && <div class="mb-6">{text}</div>}
@@ -40,7 +40,7 @@ const {
 
   {
     sponsor && (
-      <p class="absolute bottom-4 right-12 italic text-sm text-gray-600">
+      <p class="absolute bottom-4 right-12 italic text-sm text-gray-300">
         Zadavatel: {sponsor}
       </p>
     )

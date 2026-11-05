@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'ideathon-red': '#FF4B41',
-        'ideathon-purple': '#5F2583',
         'ideathon-grey': '#ECECEC',
-        'dark-purple': '#6549EA',
+        'ideathon-bg': '#35454d',
+        'ideathon-card': '#1f2a30',
+        'ideathon-primary': '#95c11f'
       },
     },
   },
